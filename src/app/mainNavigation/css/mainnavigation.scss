@@ -1,0 +1,132 @@
+.header {
+  width: 100%;
+  border-bottom: 1px solid rgba(220, 220, 220, 0.3);
+  background-color: white;
+  margin-top: -1rem;
+  padding-top: 1rem;
+}
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  margin: 15px 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 15px;
+}
+
+.menu-icon .line {
+  width: 25px;
+  height: 2px;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+/* Open the hamburger menu animation */
+.menu-icon .line.open:nth-child(1) {
+  transform: rotate(45deg) translateY(9px);
+}
+
+.menu-icon .line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon .line.open:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header {
+    transition: margin 0.3s ease;
+  }
+
+  .margin-added {
+    margin-bottom: 230px;
+  }
+
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    right: -8px;
+    background-color: white;
+    color: black;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid gainsboro;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+  }
+
+  /* Show hamburger icon */
+  .menu-icon {
+    display: flex;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    background-color: #242424;
+    margin-bottom: 1px solid rgba(220, 220, 220, 0.3);
+  }
+
+  .menu-icon .line {
+    background-color: white;
+  }
+
+  .nav-links {
+    background-color: #242424;
+    color: white;
+  }
+}

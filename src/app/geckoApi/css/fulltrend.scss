@@ -1,0 +1,87 @@
+.coin-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.section-top {
+  font-size: 20px;
+  margin-left: 3rem;
+}
+
+.full-list {
+  margin: 5px 2rem;
+  padding-bottom: 10px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.full-list::-webkit-scrollbar {
+  height: 5px;
+}
+
+.full-list::-webkit-scrollbar-thumb {
+  background-color: lightblue;
+  border-radius: 4px;
+}
+
+.each-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  background-color: white;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+
+  .coin-list-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+
+    .coin-list-span {
+      font-size: 13px;
+      background-color: #f0f0f0;
+      padding: 2px 3px;
+      border-radius: 5px;
+    }
+  }
+
+  .coin-list-price {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+
+  .coin-sparkline {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .full-list {
+    margin: 5px 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .each-list {
+    background-color: #242424;
+
+    .coin-list-section {
+      .coin-list-span {
+        background-color: #f0f0f04b;
+      }
+    }
+  }
+}

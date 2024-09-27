@@ -1,0 +1,57 @@
+.simple-price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  background-color: white;
+  padding: 0 20px;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.main-container {
+  width: 100%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.section-one {
+  width: 100%;
+}
+
+.tradingview_widget_container {
+  width: 100%;
+}
+
+.tradingview-widget-container__widget {
+  height: calc(100% - 32px);
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .simple-price-container {
+    padding: 0 8px;
+
+    .price-div {
+      margin-left: 10px;
+    }
+  }
+
+  .main-container {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .section-one {
+    width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .simple-price-container {
+    background-color: #242424;
+    color: white;
+    border: 1px solid rgba(220, 220, 220, 0.3);
+  }
+}
