@@ -29,7 +29,7 @@ const TradingViewWidget = () => {
     script.async = true;
     script.innerHTML = JSON.stringify({
       autosize: true,
-      height: "400",
+      height: "500",
       symbol: "BITSTAMP:BTCUSD",
       interval: "D",
       timezone: "Etc/UTC",
