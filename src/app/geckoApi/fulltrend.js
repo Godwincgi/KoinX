@@ -66,8 +66,11 @@ function FullTrend() {
         console.error("Error fetching trending coins:", error);
 
         // Access error message
-        const errorMessage = error.message || "An unknown error occurred.";
-        setError("Failed to fetch trending coins. " + errorMessage);
+        setError(
+          <span className="error-message">
+            Error: Failed to fetch top coins!
+          </span>
+        );
       } finally {
         setLoading(false); // Stop loading once fetch completes
       }

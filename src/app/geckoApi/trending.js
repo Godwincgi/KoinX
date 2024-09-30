@@ -62,9 +62,37 @@ function Trending() {
       } catch (error) {
         console.error("Error fetching trending coins:", error);
 
+        const isDarkMode =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+
         // Access error message
-        const errorMessage = error.message || "An unknown error occurred.";
-        setError("Failed to fetch trending coins. " + errorMessage);
+        const errorImageURL = isDarkMode
+          ? "/images/error-dark.png"
+          : "/images/error.jpg";
+
+        // Set the error state with the correct image
+        setError(
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "100%", // Full height container to center vertically if needed
+              marginTop: "20px", // Optional margin for spacing
+            }}>
+            <img
+              src={errorImageURL}
+              alt="Error occurred while fetching trending coins"
+              style={{
+                width: "300px",
+                height: "200px",
+                maxWidth: "100%", // Make image responsive
+                maxHeight: "100%", // Ensure the image stays responsive
+              }}
+            />
+          </div>
+        );
       } finally {
         setLoading(false); // Stop loading once fetch completes
       }
@@ -79,7 +107,7 @@ function Trending() {
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
-        <p>{error}</p>
+        <div>{typeof error === "string" ? <p>{error}</p> : error}</div>
       ) : (
         <ul className="list-holder">
           {coins.map((coin) => (

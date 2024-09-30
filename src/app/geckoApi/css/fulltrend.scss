@@ -1,3 +1,10 @@
+.error-message {
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
 .coin-wrapper {
   display: flex;
   flex-direction: column;
@@ -6,7 +13,7 @@
 
 .section-top {
   font-size: 20px;
-  margin-left: 3rem;
+  margin-left: 2rem;
 }
 
 .full-list {
@@ -69,8 +76,14 @@
 }
 
 @media (max-width: 768px) {
+  .error-message {
+    margin-left: 1rem;
+  }
   .full-list {
-    margin: 5px 0;
+    margin: 5px 1rem;
+  }
+  .section-top {
+    margin-left: 1rem;
   }
 }
 
