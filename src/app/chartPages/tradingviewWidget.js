@@ -30,7 +30,7 @@ const TradingViewWidget = () => {
     script.innerHTML = JSON.stringify({
       autosize: true,
       height: "500",
-      symbol: "BITSTAMP:BTCUSD",
+      symbol: "BINANCE:BTCUSD",
       interval: "D",
       timezone: "Etc/UTC",
       theme: theme,

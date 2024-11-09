@@ -8,6 +8,7 @@ import "./css/simpleprice.scss";
 
 function SimplePrice() {
   const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
 
   const url =
     "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=inr%2Cusd&include_24hr_change=true";
@@ -15,9 +16,17 @@ function SimplePrice() {
 
   useEffect(() => {
     fetch(url, options)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => setData(data))
-      .catch((error) => console.error("Error fetching data:", error));
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setError("Failed to fetch data. Please try again later.");
+      });
   }, []);
 
   return (
@@ -76,6 +85,8 @@ function SimplePrice() {
             </p>
           </div>
         </div>
+      ) : error ? (
+        <div className="error-message">{error}</div>
       ) : (
         <div>Loading...</div>
       )}

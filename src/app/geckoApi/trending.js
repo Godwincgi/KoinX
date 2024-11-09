@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import "./css/trending.scss";
 import { BsCaretUpFill } from "react-icons/bs";
 import { BsCaretDownFill } from "react-icons/bs";
+import Link from "next/link";
 
 function Trending() {
   const [coins, setCoins] = useState([]);
@@ -112,13 +113,15 @@ function Trending() {
         <ul className="list-holder">
           {coins.map((coin) => (
             <li key={coin.id} className="list">
-              <div className="coin-section">
-                <img src={coin.thumb} alt={coin.name} />
-                <strong className="coin-name">{coin.name}</strong>
-                <strong className="coin-name">
-                  ({coin.symbol.toUpperCase()}){" "}
-                </strong>
-              </div>
+              <Link href={`/${coin.id}`}>
+                <div className="coin-section">
+                  <img src={coin.thumb} alt={coin.name} />
+                  <strong className="coin-name">{coin.name}</strong>
+                  <strong className="coin-name">
+                    ({coin.symbol.toUpperCase()}){" "}
+                  </strong>
+                </div>
+              </Link>
               <div className="coin-right-section">
                 <span
                   className="right-span"

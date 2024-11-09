@@ -58,7 +58,7 @@
 
     .coin-list-span {
       font-size: 13px;
-      background-color: #f0f0f0;
+      background-color: #fff;
       padding: 2px 3px;
       border-radius: 5px;
     }
@@ -81,6 +81,11 @@
   }
   .full-list {
     margin: 5px 1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .full-list::-webkit-scrollbar {
+    display: none;
   }
   .section-top {
     margin-left: 1rem;
@@ -93,7 +98,7 @@
 
     .coin-list-section {
       .coin-list-span {
-        background-color: #f0f0f04b;
+        background-color: #fff;
       }
     }
   }
